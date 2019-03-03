@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record model="parqueatracciones.atracciones" id="atraccion1">
+            <field name="name">A001</field>
+            <field name="nombre">Dragon Kan</field>
+        </record>
+
+        <record model="parqueatracciones.empleados" id="empleado1">
+            <field name="name">1234567A</field>
+            <field name="nombre">Pedro</field>
+            <field name="apellidos">Mayoral Sanz</field>
+            <field name="salario">750</field>
+            <field name="fecha_alta">02/03/2019</field>
+        </record>
+
+        <record model="parqueatracciones.entradas" id="entrada1">
+            <field name="name">123</field>
+        </record>
+
+        <record model="parqueatracciones.clientes" id="cliente1">
+            <field name="name">16625559D</field>
+            <field name="nombre">Alejandro</field>
+            <field name="apellidos">Rodriguez Abaigar</field>
+            <field name="correo">alexabaigar@gmail.com</field>
+            <field name="entradas" ref="entrada1"></field>
+        </record>
+    </data>
+</odoo>

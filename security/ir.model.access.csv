@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+atracciones_responsable,atracciones responsable,model_parqueatracciones_atracciones,parque_manager,1,1,1,1
+entradas_responsable,entradas responsable,model_parqueatracciones_entradas,parque_manager,1,1,1,1
+empleados_responsable,empleados responsable,model_parqueatracciones_empleados,parque_manager,1,1,1,1
+clientes_responsable,clientes responsable,model_parqueatracciones_clientes,parque_manager,1,1,1,1

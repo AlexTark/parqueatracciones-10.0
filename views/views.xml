@@ -1,0 +1,172 @@
+<odoo>
+  <data>
+    <!-- VISTA DE ATRACCIONES -->
+
+    <record model="ir.ui.view" id="parqueatracciones.atracciones_tree">
+      <field name="name">parqueatracciones.atracciones.tree</field>
+      <field name="model">parqueatracciones.atracciones</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="altura"/>
+          <field name="zona"/>
+          <field name="description"/>
+          <field name="empleados"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- VISTA DE ENTRADAS -->
+
+    <record model="ir.ui.view" id="parqueatracciones.entradas_tree">
+      <field name="name">parqueatracciones.entradas.tree</field>
+      <field name="model">parqueatracciones.entradas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="tipo"/>
+          <field name="precio"/>
+          <field name="clientes"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- VISTA EMPLEADOS -->
+
+    <record model="ir.ui.view" id="parqueatracciones.empleados_tree">
+      <field name="name">parqueatracciones.empleados.tree</field>
+      <field name="model">parqueatracciones.empleados</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="salario"/>
+          <field name="fecha_alta"/>
+          <field name="atracciones"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- VISTA DE CLIENTES -->
+
+    <record model="ir.ui.view" id="parqueatracciones.clientes_tree">
+      <field name="name">parqueatracciones.clienets.tree</field>
+      <field name="model">parqueatracciones.clientes</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="correo"/>
+          <field name="entradas"/>
+          <field name="atracciones"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- ACCIONES DE VENTANA DE ATRACCIONES -->
+
+    <record model="ir.actions.act_window" id="parqueatracciones.atracciones_action_window">
+      <field name="name">parqueatracciones.atracciones.action_window</field>
+      <field name="res_model">parqueatracciones.atracciones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ACCIONES DE VENTANA DE ENTRADAS -->
+
+    <record model="ir.actions.act_window" id="parqueatracciones.entradas_action_window">
+      <field name="name">parqueatracciones.entradas.action_window</field>
+      <field name="res_model">parqueatracciones.entradas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ACCIONES DE VENTANA DE EMPLEADOS -->
+
+    <record model="ir.actions.act_window" id="parqueatracciones.empleados_action_window">
+      <field name="name">parqueatracciones.empleados.action_window</field>
+      <field name="res_model">parqueatracciones.empleados</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ACCIONES DE VENTANA DE CLIENETS -->
+
+    <record model="ir.actions.act_window" id="parqueatracciones.clientes_action_window">
+      <field name="name">parqueatracciones.clientes.action_window</field>
+      <field name="res_model">parqueatracciones.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ELEMENTO RAIZ -->
+
+    <menuitem name="Parque de Atracciones" id="parqueatracciones.menu_root" groups="parque_manager"/>
+
+    <!-- RELACIONES -->
+
+    <menuitem name="Atracciones" id="parqueatracciones.atracciones_menu" parent="parqueatracciones.menu_root" groups="parque_manager" action="parqueatracciones.atracciones_action_window"/>
+    <menuitem name="Entradas" id="parqueatracciones.entradas_menu" parent="parqueatracciones.menu_root" groups="parque_manager" action="parqueatracciones.entradas_action_window"/>
+    <menuitem name="Empleados" id="parqueatracciones.empleados_menu" parent="parqueatracciones.menu_root" groups="parque_manager" action="parqueatracciones.empleados_action_window"/>
+    <menuitem name="Clientes" id="parqueatracciones.clientes_menu" parent="parqueatracciones.menu_root" groups="parque_manager" action="parqueatracciones.clientes_action_window"/>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="parqueatracciones.list">
+      <field name="name">parqueatracciones list</field>
+      <field name="model">parqueatracciones.parqueatracciones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="parqueatracciones.action_window">
+      <field name="name">parqueatracciones window</field>
+      <field name="res_model">parqueatracciones.parqueatracciones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="parqueatracciones.action_server">
+      <field name="name">parqueatracciones server</field>
+      <field name="model_id" ref="model_parqueatracciones_parqueatracciones"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="parqueatracciones" id="parqueatracciones.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="parqueatracciones.menu_1" parent="parqueatracciones.menu_root"/>
+    <menuitem name="Menu 2" id="parqueatracciones.menu_2" parent="parqueatracciones.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="parqueatracciones.menu_1_list" parent="parqueatracciones.menu_1"
+              action="parqueatracciones.action_window"/>
+    <menuitem name="Server to list" id="parqueatracciones" parent="parqueatracciones.menu_2"
+              action="parqueatracciones.action_server"/>
+    -->
+  </data>
+</odoo>

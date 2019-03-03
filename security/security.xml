@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="parque_manager" model="res.groups">
+            <field name="name">Parque / Responsable</field>
+        </record>
+    </data>
+</odoo>
