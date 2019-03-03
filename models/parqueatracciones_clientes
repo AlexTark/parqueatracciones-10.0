@@ -1,0 +1,9 @@
+class parqueatracciones_clientes(models.Model):
+    _name = 'parqueatracciones.clientes'
+
+    name = fields.Char(string="DNI", required=True, help="Introduce el DNI del cliente")
+    nombre = fields.Char(strings="Nombre", required=True, help="Introduce el nombre del cliente")
+    apellidos = fields.Char(strings="Apellidos", required=True, help="Introduce los apellidos del cliente")
+    correo = fields.Char(strings="Correo electronico", required=True, help="Introduce el correo del cliente")
+    entradas = fields.Many2one("parqueatracciones.entradas", string="Entrada", ondelete="cascade")
+    atracciones = fields.Many2many("parqueatracciones.atracciones", string="Atracciones", ondelete="cascade")
