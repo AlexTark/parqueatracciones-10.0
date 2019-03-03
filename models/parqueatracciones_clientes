@@ -1,3 +1,4 @@
+from odoo import models, fields, api
 class parqueatracciones_clientes(models.Model):
     _name = 'parqueatracciones.clientes'
 
