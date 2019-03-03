@@ -1,0 +1,21 @@
+class parqueatracciones_entradas(models.Model):
+    _name = 'parqueatracciones.entradas'
+
+    name = fields.Char(string="IDEntrada", required=True, help="Introduce el ID de la entrada")
+    tipo = fields.Selection([('0','Infantil'),('1','Adulta'),('2','Premium'),('3','Reducida')], string="Tipo", default="0")
+    precio = fields.Float(compute="_value_pc", store=True)
+    clientes = fields.One2many("parqueatracciones.clientes","entradas", string="Clientes")
+
+    def tipo_selection(self):
+        return [(1,'Infantil'),(2,'Adulta'),(3,'Premium'),(4,'Reducida')]
+
+    @api.depends('tipo')
+    def _value_pc(self):
+        if self.tipo == '0':
+            self.precio = 19.99
+        if self.tipo == '1':
+            self.precio = 29.99
+        if self.tipo == '2':
+            self.precio = 39.99
+        if self.tipo == '3':
+            self.precio = 23.99
