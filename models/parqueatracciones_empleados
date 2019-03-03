@@ -1,0 +1,9 @@
+class parqueatracciones_empleados(models.Model):
+    _name = 'parqueatracciones.empleados'
+
+    name = fields.Char(string="DNI", required=True, help="Introduce el DNI del empleado")
+    nombre = fields.Char(strings="Nombre", required=True, help="Introduce el nombre del empleado")
+    apellidos = fields.Char(strings="Apellidos", required=True, help="Introduce los apellidos del empleado")
+    salario = fields.Float(strings="Salario", required=True, help="Introduce el salario del empleado")
+    fecha_alta = fields.Date(strings="Fecha_Alta", required=True, help="Introduce la fecha de alta del empleado")
+    atracciones = fields.Many2many("parqueatracciones.atracciones", string="Atracciones", ondelete="cascade")
